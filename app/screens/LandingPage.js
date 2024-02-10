@@ -41,15 +41,36 @@ export const LandingPage = () => {
     let milliseconds = Math.floor((timeInMilliseconds % 1000) / 10);
 
 
-    return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}:${String(milliseconds).padStart(2, '0')}`;
+    return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    // :${String(milliseconds).padStart(2, '0')}
   };
 
 
   return (
-    <View style={styles.container}>
-      <View style={styles.background}>
-
+    <View style={{ flexDirection: 'column' }}>
+      {/* <View style={{
+        height: '10%',
+        backgroundColor: 'powderblue',
+        justifyContent: 'center',
+        alignItems: 'center'
+      }}> */}
+      {/* </View> */}
+      <View style={{
+        height: '90%',
+        backgroundColor: 'black',
+        justifyContent: 'center',
+        alignItems: 'center'
+      }}>
         <Text style={styles.showTime}>{formatTime(elapsedTime)}</Text>
+      </View>
+      <View style={{
+        height: '10%',
+        backgroundColor: 'black',
+        justifyContent: 'center',
+        alignItems: 'center'
+      }}>
+
+
         <View style={styles.btns}>
           <TouchableOpacity
             title="Reset"
@@ -85,12 +106,12 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
   },
   iconStyle: {
-    fontSize: 58,
+    fontSize: 48,
     color: '#fff'
   },
 
   iconStyle1: {
-    fontSize: 58,
+    fontSize: 48,
     color: '#fff'
   },
   showTime: {
@@ -99,20 +120,17 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     justifyContent: 'center',
     alignItems: 'center',
-    fontSize: 70,
+    fontSize: 220,
     fontWeight: 'bold',
-    padding: 20,
+    padding: 10,
     textAlign: 'center',
     color: '#4dec1c',
-    // backgroundColor: 'red'
   },
   btns: {
     flexDirection: 'row',
     justifyContent: 'center',
-    padding: 20,
     alignItems: 'center',
     gap: 50,
-    // backgroundColor: 'blue'
   }
 })
 
